@@ -1,0 +1,46 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# AveByGroup
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of AveByGroup is to calculate the average of a numeric column based on the data set grouped by another column(s).  
+
+## Installation
+
+You can install the development version of AveByGroup from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("liq34525/STAT545B2")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example1}
+library(AveByGroup)
+test1 <- average(palmerpenguins::penguins,"year",body_mass_g, TRUE)  
+test1
+```
+You can also group multiple columns:  
+```{r example2}
+library(AveByGroup)
+test2 <- average(palmerpenguins::penguins,c("year","island"),body_mass_g, TRUE)  
+test2
+```
