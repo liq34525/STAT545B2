@@ -35,7 +35,9 @@ average <- function(data,groupBy,calculateAve, na.rm = TRUE){
   if(!is.numeric(data[[calculate]]))
     return('You can only calculate the average of a numeric column')
 
-  data %>%
+  x <- data %>%
     group_by(data[groupBy]) %>%
     summarise(mean = mean({{calculateAve}}, na.rm = na.rm))
+
+  return(x)
 }
